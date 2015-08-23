@@ -3,4 +3,4 @@
 !.gitignore
 target/*
 target
-sedemo.iml
+*.iml
