@@ -17,15 +17,21 @@
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
             
 	<!-- 引入jdbc配置文件 -->  
-    <context:property-placeholder location="classpath:local/jdbc.properties" />
+    <context:property-placeholder location="classpath:jdbc.properties" />
   
     <!--创建jdbc数据源 -->  
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  
         destroy-method="close">  
-        <property name="driverClassName" value="${db.driver}" />  
-        <property name="url" value="jdbc:mysql://${db.host}:3306/${db.dbname}" />  
-        <property name="username" value="${db.username}" />  
-        <property name="password" value="${db.password}" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/demo" />
+        <property name="username" value="root" />
+        <property name="password" value="forest" />
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="initialSize" value="10"/>
+        <property name="maxActive" value="10"/>
+        <property name="minIdle" value="5"/>
+        <property name="maxIdle" value="5"/>
+
     </bean>
     
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
@@ -39,7 +45,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描mapping.xml文件 -->
 		<property name="mapperLocations"
-			value="classpath*:com/learn/mapper/UserMapper.xml"></property>
+			value="classpath*:com/learn/mapper/**.xml"></property>
 	</bean>
 
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->

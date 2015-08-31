@@ -26,11 +26,13 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
+	@Transactional
 	public void insertUser(User user) throws Exception {
 		iUserDao.insertUser(user);
 	}
 
 	@Override
+	@Transactional
 	public void deleteUser(Long userId) throws Exception {
 		iUserDao.deleteUser(userId);
 	}

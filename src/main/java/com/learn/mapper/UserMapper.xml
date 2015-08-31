@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.learn.dao.IUserDao">
-
 	<resultMap id="getUserMap" type="com.learn.model.User">
-		<id column="id" property="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<id column="id" property="id" jdbcType="BIGINT" javaType="java.lang.Long"/>
 		<result column="username" property="username" jdbcType="VARCHAR" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
 	</resultMap>
-
 	<select id="getUser" parameterType="java.lang.Long" resultMap="getUserMap">
-		select id,username,name from user where id = #{userId,jdbcType=BIGINT}
+		select id,username,name,password from user where id = #{userId}
 	</select>
 	<update id="updateUser" parameterType="com.learn.model.User">
-		update user set username=#{username,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR} 
+		update user set username=#{username,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR}
 		where id = #{id,jdbcType=BIGINT}
 	</update>
 	<insert id="insertUser" parameterType="com.learn.model.User" 
 	useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert user(username,name) 
-		values(#{username,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})
+		insert user(username,name,password)
+		values(#{username,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
 	</insert>
-	
 	<delete id="deleteUser" parameterType="java.lang.Long">
 		delete from user where id = #{userId,jdbcType=BIGINT}
 	</delete>
-	
 </mapper>
