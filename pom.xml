@@ -373,6 +373,9 @@
   	<finalName>sedemo</finalName>
 	  <resources>
 		  <resource>
+			  <directory>src/main/java</directory>
+		  </resource>
+		  <resource>
 			  <directory>src/main/resources</directory>
 			  <excludes>
 				  <exclude>local/*</exclude>
@@ -390,8 +393,15 @@
 				<target>1.6</target> 
 				<source>1.6</source> 
 				<encoding>UTF-8</encoding> 
-				</configuration> 
-			</plugin> 
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<includeEmptyDirectories>true</includeEmptyDirectories>
+				</configuration>
+			</plugin>
 		</plugins>
   </build>
   

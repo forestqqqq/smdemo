@@ -18,7 +18,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
         <form-login
                 login-page="/login.html"
-                default-target-url="/users.html"
+                default-target-url="/index.html"
                 />
 
         <session-management
