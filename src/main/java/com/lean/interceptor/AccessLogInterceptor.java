@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 访问日志拦截器，拦截请求，记录请求日志
  * @author 作者： zhanghaiwei
  * @version 1.0
  * @date 创建时间：2015/9/7 16:57
