@@ -63,13 +63,17 @@
 	    </property>  
 	</bean>
 
+
+	<!-- 拦截器配置 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<bean class="com.lean.interceptor.AccessLogInterceptor"></bean>
+			<bean class="com.learn.interceptor.AccessLogInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
 
+	<!-- 异常处理器 -->
+	<bean id="exceptionResolver" class="com.learn.resolver.ExceptionResolver"></bean>
 
 
 </beans>

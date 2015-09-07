@@ -1,4 +1,4 @@
-package com.lean.interceptor;
+package com.learn.interceptor;
 
 import com.learn.util.URLUtil;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

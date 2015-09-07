@@ -26,9 +26,6 @@ public class FormController {
 	
 	@RequestMapping("/users.html")
 	public ModelAndView users(HttpServletRequest request,String p1,String p2){
-		System.out.println("p1=="+p1);
-		System.out.println("p2=="+p2);
-		
 		Map<String,Object> data = new HashMap<String,Object>();
 		data.put("user", userService.getUser(1L));
 		data.put("kk", "ppppp");
