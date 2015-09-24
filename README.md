@@ -1,6 +1,6 @@
-# 使用maven整合spring mvc和mybatis，整合步骤
+# 使用maven整合spring mvc和mybatis
 
-
+## 整合步骤
 1. 创建maven项目
 2. 配置maven的web项目
 3. 使用spring mvc构建项目
